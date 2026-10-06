@@ -31,10 +31,37 @@ a:focus-visible{outline:2px solid #E8875F;outline-offset:3px}
 header nav a:not([href^="https"]):hover{color:#EDEEE9 !important}
 a[href^="https://wa.me"]{transition:transform .15s ease, filter .15s ease}
 a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-head{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px 0 15px;border-radius:999px;background:#D96F45;color:#0A0A0A !important;font-family:'Instrument Sans',system-ui,sans-serif;font-size:15px;font-weight:600;line-height:1;letter-spacing:.005em;white-space:nowrap;text-decoration:none}
+.btn-head:hover{background:#E07A4F}
+.btn-head .lbl-short{display:none}
+.btn-primary,.btn-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;font-weight:600;font-size:16px;line-height:1;white-space:nowrap;text-decoration:none}
+.btn-primary{background:#D96F45;color:#0A0A0A !important}
+.btn-outline{border:1px solid #D96F45;color:#EDEEE9 !important}
+.btn-outline:hover{background:#1E1410}
+.text-link{align-self:flex-start;display:inline-block;margin-top:6px;padding:10px 0;font-weight:600;text-decoration:none}
+.text-link:hover{text-decoration:underline}
 @media (max-width: 720px){
+  body{font-size:16px}
   header nav a:not([href^="https"]){display:none !important}
-  header > div{flex-wrap:nowrap !important}
-  header nav a[href^="https"]{padding:0 14px !important;font-size:14px}
+  header > div{flex-wrap:nowrap !important;padding-top:10px !important;padding-bottom:10px !important}
+  .btn-head{height:40px;padding:0 14px 0 12px;font-size:14px;gap:7px}
+  .btn-head .lbl-long{display:none}
+  .btn-head .lbl-short{display:inline}
+  .hero{padding-top:36px !important;padding-bottom:56px !important;gap:36px !important}
+  .hero-title{font-size:38px !important;line-height:1.08 !important}
+  .hero-ctas{flex-direction:column;align-items:stretch !important;gap:10px !important}
+  .hero-ctas a{width:100%;box-sizing:border-box}
+  .chat{max-width:100% !important}
+  .card{padding:24px 22px !important}
+  .inline-cta{padding:20px !important}
+  .inline-cta p{font-size:17px !important}
+  .btn-primary,.btn-outline,.cta-final-btn{width:100%;box-sizing:border-box;white-space:normal;text-align:center}
+  .cta-box{border-radius:22px !important}
+  .foot{flex-direction:column;align-items:flex-start !important;gap:14px !important}
+  .foot > div:last-child{flex-direction:column;gap:6px !important}
+  .wa-fab{display:none !important}
+  .chips li{padding:10px 16px !important;font-size:15px}
+  .badge{font-size:13px !important}
 }
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}a{transition:none !important}}
 </style>
@@ -53,31 +80,31 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
         <a href="#solucoes" style="color: #C9C9C2; text-decoration: none;">Soluções</a>
         <a href="#como-funciona" style="color: #C9C9C2; text-decoration: none;">Como funciona</a>
         <a href="#perguntas" style="color: #C9C9C2; text-decoration: none;">Perguntas</a>
-        <a target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais." style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #D96F45; color: #0A0A0A; font-weight: 600; text-decoration: none;">Falar no WhatsApp</a>
+        <a class="btn-head" target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais."><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg><span class="lbl-long">Falar no WhatsApp</span><span class="lbl-short">WhatsApp</span></a>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
-  <section id="topo" style="max-width: 1200px; margin: 0 auto; padding: clamp(56px, 9vw, 112px) clamp(20px, 5vw, 48px) clamp(64px, 8vw, 104px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 6vw, 80px);">
+  <section id="topo" class="hero" style="max-width: 1200px; margin: 0 auto; padding: clamp(56px, 9vw, 112px) clamp(20px, 5vw, 48px) clamp(64px, 8vw, 104px); display: flex; flex-wrap: wrap; align-items: center; gap: clamp(40px, 6vw, 80px);">
     <div style="flex: 1 1 480px; min-width: 0; display: flex; flex-direction: column; gap: 28px;">
-      <div style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 6px 14px; border: 1px solid #3A2A22; border-radius: 999px; font-size: 14px; color: #E8B79F;">
+      <div class="badge" style="display: inline-flex; align-self: flex-start; align-items: center; gap: 10px; padding: 6px 14px; border: 1px solid #3A2A22; border-radius: 999px; font-size: 14px; color: #E8B79F;">
         <span style="width: 8px; height: 8px; border-radius: 50%; background: #D96F45;"></span>
         Agência de IA e automação · Juazeiro do Norte, CE
       </div>
-      <h1 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(40px, 5.6vw, 68px); line-height: 1.05; letter-spacing: -0.03em;">Sua empresa atendendo, agendando e vendendo <span style="color: #D96F45;">no automático.</span></h1>
+      <h1 class="hero-title" style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(40px, 5.6vw, 68px); line-height: 1.05; letter-spacing: -0.03em;">Sua empresa atendendo, agendando e vendendo <span style="color: #D96F45;">no automático.</span></h1>
       <p style="margin: 0; max-width: 560px; font-size: clamp(17px, 1.6vw, 20px); color: #B9B9B2;">Criamos agentes de IA no WhatsApp, automações e sistemas sob medida para empresas que querem responder mais rápido e crescer sem aumentar a equipe.</p>
-      <div style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
-        <a target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais." style="display: inline-flex; align-items: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 999px; background: #D96F45; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none;">
+      <div class="hero-ctas" style="display: flex; flex-wrap: wrap; gap: 14px; align-items: center;">
+        <a target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais." style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 54px; padding: 0 26px; border-radius: 999px; background: #D96F45; color: #0A0A0A; font-weight: 600; font-size: 17px; text-decoration: none;">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
           Falar no WhatsApp
         </a>
-        <a href="#solucoes" style="display: inline-flex; align-items: center; min-height: 54px; padding: 0 22px; border-radius: 999px; border: 1px solid #333; color: #EDEEE9; font-weight: 500; text-decoration: none;">Ver soluções</a>
+        <a href="#solucoes" style="display: inline-flex; align-items: center; justify-content: center; min-height: 54px; padding: 0 22px; border-radius: 999px; border: 1px solid #333; color: #EDEEE9; font-weight: 500; text-decoration: none;">Ver soluções</a>
       </div>
     </div>
 
     <!-- Chat mock -->
-    <figure style="flex: 1 1 360px; max-width: 440px; margin: 0; display: flex; flex-direction: column; gap: 12px;">
+    <figure class="chat" style="flex: 1 1 360px; max-width: 440px; margin: 0; display: flex; flex-direction: column; gap: 12px;">
       <div style="background: #141414; border: 1px solid #262626; border-radius: 24px; overflow: hidden;">
         <div style="display: flex; align-items: center; gap: 12px; padding: 16px 20px; border-bottom: 1px solid #222;">
           <div style="width: 40px; height: 40px; border-radius: 50%; background: #1F1F1F; display: flex; align-items: center; justify-content: center;">
@@ -134,34 +161,38 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
       <h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(30px, 3.6vw, 44px); line-height: 1.12; letter-spacing: -0.02em;">Tecnologia que trabalha enquanto você cuida do negócio.</h2>
     </div>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px;">
-      <article style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
+      <article class="card" style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
         <div style="width: 48px; height: 48px; border-radius: 14px; background: #2A1C15; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D96F45" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path><path d="M8.5 11.5h.01M12 11.5h.01M15.5 11.5h.01"></path></svg>
         </div>
         <h3 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 21px; font-weight: 600;">Agentes de IA no WhatsApp</h3>
         <p style="margin: 0; color: #A9A9A2; font-size: 16px;">Atendem 24h, tiram dúvidas, entendem áudio, agendam, vendem e passam para a sua equipe quando precisa.</p>
       </article>
-      <article style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
+      <article class="card" style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
         <div style="width: 48px; height: 48px; border-radius: 14px; background: #2A1C15; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D96F45" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5" cy="6" r="2"></circle><circle cx="19" cy="18" r="2"></circle><circle cx="19" cy="6" r="2"></circle><path d="M7 6h10M19 8v8M7 6c4 0 4 12 10 12"></path></svg>
         </div>
         <h3 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 21px; font-weight: 600;">Automação de processos</h3>
         <p style="margin: 0; color: #A9A9A2; font-size: 16px;">Lembretes, confirmações, cobranças, planilhas e sistemas conversando entre si, sem ninguém copiar e colar.</p>
       </article>
-      <article style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
+      <article class="card" style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
         <div style="width: 48px; height: 48px; border-radius: 14px; background: #2A1C15; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D96F45" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M7 6.5h.01M10 6.5h.01"></path></svg>
         </div>
         <h3 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 21px; font-weight: 600;">Sites e landing pages</h3>
         <p style="margin: 0; color: #A9A9A2; font-size: 16px;">Páginas rápidas, bonitas e feitas para converter, já ligadas ao seu WhatsApp e às suas campanhas.</p>
       </article>
-      <article style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
+      <article class="card" style="background: #141414; border: 1px solid #242424; border-radius: 20px; padding: 32px 28px; display: flex; flex-direction: column; gap: 16px;">
         <div style="width: 48px; height: 48px; border-radius: 14px; background: #2A1C15; display: flex; align-items: center; justify-content: center;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D96F45" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"></path></svg>
         </div>
         <h3 style="margin: 0; font-family: 'Sora', sans-serif; font-size: 21px; font-weight: 600;">SaaS e dashboards</h3>
         <p style="margin: 0; color: #A9A9A2; font-size: 16px;">Sistemas sob medida e painéis que mostram atendimentos, agendamentos e vendas em tempo real.</p>
       </article>
+    </div>
+    <div class="inline-cta" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 24px; padding: 24px 28px; border: 1px solid #2A2A2A; border-radius: 20px;">
+      <p style="margin: 0; font-size: 18px; color: #D6D6CF;">Não sabe qual solução faz sentido para a sua empresa?</p>
+      <a class="btn-outline" target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vi%20as%20solu%C3%A7%C3%B5es%20no%20site%20da%20Automatizza%20e%20quero%20entender%20qual%20faz%20sentido%20para%20minha%20empresa."><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Tirar a dúvida no WhatsApp</a>
     </div>
   </section>
 
@@ -194,6 +225,7 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
           <p style="margin: 0; color: #A9A9A2; font-size: 16px;">Ajustamos as respostas com o uso real e seguimos de perto, com suporte de quem está na região.</p>
         </li>
       </ol>
+      <div><a class="btn-primary" target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20Automatizza."><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>Começar pelo diagnóstico</a></div>
     </div>
   </section>
 
@@ -203,8 +235,9 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
       <span style="font-size: 14px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #D96F45;">Para quem</span>
       <h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 600; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.15; letter-spacing: -0.02em;">Feito para quem vive no WhatsApp.</h2>
       <p style="margin: 0; color: #A9A9A2; max-width: 460px;">Se boa parte das suas vendas e agendamentos passa por conversa, a automação paga a conta rápido.</p>
+      <a class="text-link" target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais.">Seu segmento não está na lista? Fale com a gente <span aria-hidden="true">→</span></a>
     </div>
-    <ul style="flex: 1 1 480px; margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px;">
+    <ul class="chips" style="flex: 1 1 480px; margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px;">
       <li style="padding: 12px 20px; border: 1px solid #2E2E2E; border-radius: 999px; font-weight: 500;">Clínicas e consultórios</li>
       <li style="padding: 12px 20px; border: 1px solid #2E2E2E; border-radius: 999px; font-weight: 500;">Escritórios de advocacia</li>
       <li style="padding: 12px 20px; border: 1px solid #2E2E2E; border-radius: 999px; font-weight: 500;">Comércio e lojas</li>
@@ -241,12 +274,12 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
 
   <!-- CTA FINAL -->
   <section style="max-width: 1200px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(20px, 5vw, 48px);">
-    <div style="background: #D96F45; color: #0A0A0A; border-radius: 28px; padding: clamp(40px, 6vw, 72px) clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px;">
+    <div class="cta-box" style="background: #D96F45; color: #0A0A0A; border-radius: 28px; padding: clamp(40px, 6vw, 72px) clamp(28px, 5vw, 64px); display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px;">
       <div style="flex: 1 1 420px; display: flex; flex-direction: column; gap: 12px;">
         <h2 style="margin: 0; font-family: 'Sora', sans-serif; font-weight: 700; font-size: clamp(30px, 3.8vw, 46px); line-height: 1.1; letter-spacing: -0.02em;">Vamos automatizar o seu atendimento?</h2>
         <p style="margin: 0; font-size: 18px; color: #2A160D;">Conte como funciona sua empresa hoje. A gente mostra o que dá para automatizar.</p>
       </div>
-      <a target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais." style="display: inline-flex; align-items: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #0A0A0A; color: #EDEEE9; font-weight: 600; font-size: 17px; text-decoration: none;">
+      <a target="_blank" rel="noopener" href="https://wa.me/558892151074?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Automatizza%20e%20quero%20saber%20mais." class="cta-final-btn" style="display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 28px; border-radius: 999px; background: #0A0A0A; color: #EDEEE9; font-weight: 600; font-size: 17px; text-decoration: none;">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-12.4 7.4L3 21l2.1-5.4A8.4 8.4 0 1 1 21 11.5z"></path></svg>
         Falar no WhatsApp
       </a>
@@ -255,7 +288,7 @@ a[href^="https://wa.me"]:hover{filter:brightness(1.08);transform:translateY(-1px
 
   <!-- RODAPE -->
   <footer style="border-top: 1px solid #1E1E1E;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 32px clamp(20px, 5vw, 48px) 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-size: 14px; color: #8A8A84;">
+    <div class="foot" style="max-width: 1200px; margin: 0 auto; padding: 32px clamp(20px, 5vw, 48px) 40px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; font-size: 14px; color: #8A8A84;">
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="assets/logo.png" alt="" style="width: 32px; height: 25px; object-fit: contain; mix-blend-mode: lighten;">
         <span style="font-family: 'Sora', sans-serif; font-weight: 600; color: #EDEEE9;">Automatizza</span>
